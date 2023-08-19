@@ -11,10 +11,10 @@ int main(void)
 {
     setlocale(LC_ALL, "");
     Node *head = NULL;
-    DLIST_insertStart(&head, "Hello");
-    DLIST_insertStart(&head, "World!");
+    DLIST_insertEnd(&head, "Hello");
+    DLIST_insertEnd(&head, "World!");
 
-    DLIST_display(&head);
+    DLIST_display(head);
     DLIST_cleanup(head);
     return 0;
 }

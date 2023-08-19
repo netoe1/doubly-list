@@ -62,7 +62,7 @@ void DLIST_insertMiddle(Node **head, const char *data, int position)
     }
     if (current == NULL)
     {
-        insertEnd(head, data);
+        DLIST_insertEnd(head, data);
     }
     else
     {
