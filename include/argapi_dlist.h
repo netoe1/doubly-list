@@ -19,7 +19,7 @@ typedef struct node
     struct node *next;
 } ARGAPI_DLIST_ARG;
 
-void ARGAPI_DLIST_insertEnd(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not);
+void ARGAPI_DLIST_addArguments(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not);
 void ARGAPI_DLIST_insertStart(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not);
 void ARGAPI_DLIST_insertMiddle(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not, int position);
 void ARGAPI_DLIST_deleteNode(ARGAPI_DLIST_ARG **head, ARGAPI_DLIST_ARG *toDelete);

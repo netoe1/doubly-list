@@ -16,7 +16,7 @@ static ARGAPI_DLIST_ARG *ARGAPI_DLIST_createNode(const char *data, const REQUIRE
     return newNode;
 }
 
-void ARGAPI_DLIST_insertEnd(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not)
+void ARGAPI_DLIST_addArguments(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not)
 {
     ARGAPI_DLIST_ARG *newNode = ARGAPI_DLIST_createNode(data, required_or_not);
     if (*head == NULL)
@@ -64,7 +64,7 @@ void ARGAPI_DLIST_insertMiddle(ARGAPI_DLIST_ARG **head, const char *data, const 
     }
     if (current == NULL)
     {
-        ARGAPI_DLIST_insertEnd(head, data, required_or_not);
+        ARGAPI_DLIST_addArguments(head, data, required_or_not);
     }
     else
     {
