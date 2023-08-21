@@ -3,7 +3,7 @@
 #include <string.h>
 #include "../include/argapi_dlist.h"
 
-ARGAPI_DLIST_ARG *ARGAPI_DLIST_createNode(const char *data, const int required_or_not)
+static ARGAPI_DLIST_ARG *ARGAPI_DLIST_createNode(const char *data, const REQUIRE_TYPE required_or_not)
 {
     ARGAPI_DLIST_ARG *newNode = (ARGAPI_DLIST_ARG *)malloc(sizeof(ARGAPI_DLIST_ARG));
     if (newNode != NULL)
@@ -16,7 +16,7 @@ ARGAPI_DLIST_ARG *ARGAPI_DLIST_createNode(const char *data, const int required_o
     return newNode;
 }
 
-void ARGAPI_DLIST_insertEnd(ARGAPI_DLIST_ARG **head, const char *data, const int required_or_not)
+void ARGAPI_DLIST_insertEnd(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not)
 {
     ARGAPI_DLIST_ARG *newNode = ARGAPI_DLIST_createNode(data, required_or_not);
     if (*head == NULL)
@@ -46,7 +46,7 @@ void ARGAPI_DLIST_insertStart(ARGAPI_DLIST_ARG **head, const char *data, const i
     *head = newNode;
 }
 
-void ARGAPI_DLIST_insertMiddle(ARGAPI_DLIST_ARG **head, const char *data, const int required_or_not, int position)
+void ARGAPI_DLIST_insertMiddle(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not, int position)
 {
     if (position <= 0)
     {
