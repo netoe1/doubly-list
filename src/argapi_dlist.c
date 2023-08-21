@@ -139,8 +139,7 @@ ARGAPI_DLIST_ARG *ARGAPI_DLIST_search(ARGAPI_DLIST_ARG *head, const char *target
     return NULL;
 }
 
-// Using example
-
+// Como usar o código!
 /*
 int main() {
      ARGAPI_DLIST_ARG* head = NULL;

@@ -7,18 +7,18 @@
 
 #define ARG_REQUIRED 1
 #define ARG_NOT_REQUIRED 0
-
+#define BUFFER_LIMIT 255
 typedef int REQUIRE_TYPE;
 typedef unsigned int POSITION_LIST;
+
 typedef struct node
 {
-    char data[100];
+    char data[BUFFER_LIMIT];
     REQUIRE_TYPE required_or_not;
     struct node *prev;
     struct node *next;
 } ARGAPI_DLIST_ARG;
 
-static ARGAPI_DLIST_ARG *DLIST_createNode(const char *data, const REQUIRE_TYPE required_or_not);
 void ARGAPI_DLIST_insertEnd(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not);
 void ARGAPI_DLIST_insertStart(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not);
 void ARGAPI_DLIST_insertMiddle(ARGAPI_DLIST_ARG **head, const char *data, const REQUIRE_TYPE required_or_not, int position);

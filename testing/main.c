@@ -1,7 +1,5 @@
 
-// External Libs
-#include "../include/dlist.h"
-
+#include "../include/argapi_dlist.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -10,11 +8,10 @@
 int main(void)
 {
     setlocale(LC_ALL, "");
-    Node *head = NULL;
-    DLIST_insertEnd(&head, "Hello");
-    DLIST_insertEnd(&head, "World!");
-
-    DLIST_display(head);
-    DLIST_cleanup(head);
+    ARGAPI_DLIST_ARG *argumento = NULL;
+    ARGAPI_DLIST_insertEnd(&argumento, "Hello", ARG_NOT_REQUIRED);
+    ARGAPI_DLIST_insertEnd(&argumento, "World", ARG_NOT_REQUIRED);
+    ARGAPI_DLIST_display(argumento);
+    ARGAPI_DLIST_cleanup(argumento);
     return 0;
 }
